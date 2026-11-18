@@ -19,17 +19,17 @@ Projeto da Global Solution CitizenTech 2026.2 (FIAP, Engenharia de Software, 3º
 
 ## Integrantes
 
-Augusto Rocha Silva - RM556316
-Erik Yuuta Goto - RM558076
-Guilherme Vieira Augusto - RM557264
-Wendell dos Santos Silva - RM558859
+- Augusto Rocha Silva - RM556316
+- Erik Yuuta Goto - RM558076
+- Guilherme Vieira Augusto - RM557264
+- Wendell dos Santos Silva - RM558859
 
 ## Estrutura do repositório
 
 | Pasta | O que tem | Disciplina |
 | --- | --- | --- |
 | [api-soa](api-soa/README.md) | API REST de ocorrências: FastAPI, banco de dados, migrações, Swagger e testes | Arquitetura Orientada a Serviços (SOA) e Web Services |
-| infra-os | Scripts Bash, serviços systemd e monitoramento da infraestrutura Linux que hospeda a API | Operating Systems (em desenvolvimento) |
+| [infra-os](infra-os/README.md) | Scripts Bash, serviços systemd, monitoramento e testes de falha da infraestrutura Linux que hospeda a API | Operating Systems |
 
 ## Uso de IA
 
