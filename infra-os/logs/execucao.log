@@ -1,0 +1,158 @@
+2026-11-17 21:41:00 [INFO] [01-infra.sh] iniciando (usuário: guilh)
+2026-11-17 21:41:00 [INFO] [01-infra.sh] 0/4 Ferramentas de rede (curl, iproute2, iputils-ping)
+2026-11-17 21:41:11 [INFO] [01-infra.sh] 1/4 Hostname
+2026-11-17 21:41:11 [INFO] [01-infra.sh] hostname alterado de 'Guilherme' para 'zeladoria-srv'
+2026-11-17 21:41:11 [INFO] [01-infra.sh] 2/4 IP e rede
+2026-11-17 21:41:11 [INFO] [01-infra.sh]   interface: lo               UNKNOWN        127.0.0.1/8 10.255.255.254/32 ::1/128
+2026-11-17 21:41:11 [INFO] [01-infra.sh]   interface: eth0             UP             172.25.171.164/20 fe80::215:5dff:fe07:327b/64
+2026-11-17 21:41:11 [INFO] [01-infra.sh] gateway padrão: 172.25.160.1
+2026-11-17 21:41:11 [INFO] [01-infra.sh] gateway respondeu ao ping
+2026-11-17 21:41:11 [INFO] [01-infra.sh] internet OK (1.1.1.1 respondeu)
+2026-11-17 21:41:11 [INFO] [01-infra.sh] ambiente WSL: o IP e a rede são gerenciados pelo Windows; o script registra e valida, não altera
+2026-11-17 21:41:11 [INFO] [01-infra.sh] 3/4 DNS
+2026-11-17 21:41:11 [INFO] [01-infra.sh] resolv.conf atualizado (cópia do original em /etc/resolv.conf.bak-zeladoria)
+2026-11-17 21:41:12 [INFO] [01-infra.sh] resolução de nomes OK: github.com -> 4.228.31.150
+2026-11-17 21:41:12 [INFO] [01-infra.sh] 4/4 Usuários e permissões
+2026-11-17 21:41:12 [INFO] [01-infra.sh] usuário 'guilh' incluído no grupo 'zeladoria-ops' (vale a partir do próximo login)
+2026-11-17 21:41:12 [INFO] [01-infra.sh]   /opt/zeladoria (dono=root grupo=zeladoria modo=750)
+2026-11-17 21:41:12 [INFO] [01-infra.sh]   /etc/zeladoria (dono=root grupo=zeladoria modo=750)
+2026-11-17 21:41:12 [INFO] [01-infra.sh]   /var/lib/zeladoria (dono=zeladoria grupo=zeladoria modo=750)
+2026-11-17 21:41:12 [INFO] [01-infra.sh]   /var/log/zeladoria (dono=root grupo=zeladoria-ops modo=2775)
+2026-11-17 21:41:12 [INFO] [01-infra.sh] ---- RESUMO ----
+2026-11-17 21:41:12 [INFO] [01-infra.sh] hostname ........: zeladoria-srv
+2026-11-17 21:41:12 [INFO] [01-infra.sh] IPs .............: 172.25.171.164 
+2026-11-17 21:41:12 [INFO] [01-infra.sh] DNS .............: 10.255.255.254 1.1.1.1 8.8.8.8 
+2026-11-17 21:41:12 [INFO] [01-infra.sh] usuário serviço .: uid=999(zeladoria) gid=986(zeladoria) groups=986(zeladoria)
+2026-11-17 21:41:12 [INFO] [01-infra.sh] grupo operação ..: zeladoria-ops:x:1001:guilh
+2026-11-17 21:41:12 [INFO] [01-infra.sh] no WSL, para o hostname e o DNS valerem depois de reiniciar, rode no PowerShell: wsl --shutdown
+2026-11-17 21:41:12 [INFO] [01-infra.sh] terminou com sucesso
+2026-11-17 21:51:32 [INFO] [02-app.sh] iniciando (usuário: guilh)
+2026-11-17 21:51:32 [INFO] [02-app.sh] 0/6 Verificações iniciais
+2026-11-17 21:51:32 [INFO] [02-app.sh] 1/6 Dependências do sistema (python3, python3-venv, curl)
+2026-11-17 21:51:41 [INFO] [02-app.sh] python: Python 3.14.4
+2026-11-17 21:51:41 [INFO] [02-app.sh] 2/6 Código da aplicação em /opt/zeladoria/app
+2026-11-17 21:51:41 [INFO] [02-app.sh] código copiado: alembic alembic.ini app pytest.ini requirements.txt 
+2026-11-17 21:51:41 [INFO] [02-app.sh] 3/6 Variáveis de ambiente em /etc/zeladoria/zeladoria.env
+2026-11-17 21:51:41 [INFO] [02-app.sh] arquivo criado com DATABASE_URL=sqlite:////var/lib/zeladoria/zeladoria.db
+2026-11-17 21:51:41 [INFO] [02-app.sh] permissões: root:zeladoria 640
+2026-11-17 21:51:41 [INFO] [02-app.sh] 4/6 Ambiente Python (venv) e bibliotecas do requirements.txt
+2026-11-17 21:51:49 [INFO] [02-app.sh] bibliotecas instaladas: 30 pacotes
+2026-11-17 21:51:49 [INFO] [02-app.sh] 5/6 Migrações do banco (alembic upgrade head)
+2026-11-17 21:51:50 [INFO] [02-app.sh]   alembic: INFO  [alembic.runtime.migration] Context impl SQLiteImpl.
+2026-11-17 21:51:50 [INFO] [02-app.sh]   alembic: INFO  [alembic.runtime.migration] Will assume non-transactional DDL.
+2026-11-17 21:51:50 [INFO] [02-app.sh]   alembic: INFO  [alembic.runtime.migration] Running upgrade  -> f081c75c86b6, cria tabelas bairros e ocorrencias
+2026-11-17 21:51:50 [INFO] [02-app.sh]   alembic: INFO  [alembic.runtime.migration] Running upgrade f081c75c86b6 -> ce6c1f82f030, adiciona foto na ocorrencia
+2026-11-17 21:51:50 [INFO] [02-app.sh] banco em /var/lib/zeladoria/zeladoria.db: zeladoria:zeladoria 644
+2026-11-17 21:51:50 [INFO] [02-app.sh] 6/6 Serviço systemd zeladoria-api.service
+2026-11-17 21:51:51 [INFO] [02-app.sh] API no ar: {"status":"ok","banco":"ok"}
+2026-11-17 21:51:51 [INFO] [02-app.sh] ---- RESUMO ----
+2026-11-17 21:51:51 [INFO] [02-app.sh] serviço ativo .......: active
+2026-11-17 21:51:51 [INFO] [02-app.sh] início automático ...: enabled
+2026-11-17 21:51:51 [INFO] [02-app.sh] Swagger .............: http://localhost:8000/docs (abra no navegador do Windows)
+2026-11-17 21:51:51 [INFO] [02-app.sh] logs da API .........: journalctl -u zeladoria-api -n 20 --no-pager
+2026-11-17 21:51:51 [INFO] [02-app.sh] terminou com sucesso
+2026-11-17 23:01:25 [INFO] [03-monitor.sh] iniciando (usuário: guilh)
+2026-11-17 23:01:25 [INFO] [03-monitor.sh] 0/4 Verificações iniciais
+2026-11-17 23:01:25 [INFO] [03-monitor.sh] 1/4 Programas do monitor em /opt/zeladoria/bin
+2026-11-17 23:01:28 [INFO] [03-monitor.sh] instalados: lib.sh monitor.sh 
+2026-11-17 23:01:28 [INFO] [03-monitor.sh] 2/4 Limites do monitoramento em /etc/zeladoria/monitor.env
+2026-11-17 23:01:28 [INFO] [03-monitor.sh] arquivo criado com os limites padrão
+2026-11-17 23:01:28 [INFO] [03-monitor.sh] limites em uso: CPU_LIMITE=80 MEM_LIMITE=80 DISCO_LIMITE=85 INTERVALO=10 FALHAS_PARA_REINICIAR=2 
+2026-11-17 23:01:28 [INFO] [03-monitor.sh] 3/4 Rotação dos logs (logrotate)
+2026-11-17 23:01:28 [INFO] [03-monitor.sh] configuração do logrotate validada (/etc/logrotate.d/zeladoria)
+2026-11-17 23:01:28 [INFO] [03-monitor.sh] 4/4 Serviço systemd zeladoria-monitor.service
+2026-11-17 23:01:28 [INFO] [monitor.sh] iniciando (usuário: root)
+2026-11-17 23:01:30 [INFO] [03-monitor.sh] ---- RESUMO ----
+2026-11-17 23:01:30 [INFO] [03-monitor.sh] serviço ativo .......: active
+2026-11-17 23:01:30 [INFO] [03-monitor.sh] início automático ...: enabled
+2026-11-17 23:01:30 [INFO] [03-monitor.sh] últimas linhas do monitor.log:
+2026-11-17 23:01:30 [INFO] [03-monitor.sh]   2026-11-17 23:01:28 [INFO] monitor iniciado: limites CPU=80% MEM=80% DISCO=85% | intervalo=10s | api=http://127.0.0.1:8000/health
+2026-11-17 23:01:30 [INFO] [03-monitor.sh]   2026-11-17 23:01:29 [INFO] cpu=0% mem=8% disco=1% api=ok
+2026-11-17 23:01:30 [INFO] [03-monitor.sh] acompanhar ao vivo ..: tail -f /var/log/zeladoria/monitor.log
+2026-11-17 23:01:30 [INFO] [03-monitor.sh] controlar ...........: sudo systemctl stop|start|restart zeladoria-monitor
+2026-11-17 23:01:30 [INFO] [03-monitor.sh] terminou com sucesso
+2026-11-17 23:04:26 [INFO] [monitor.sh] terminou com sucesso
+2026-11-17 23:04:26 [INFO] [monitor.sh] iniciando (usuário: root)
+2026-11-17 23:06:00 [INFO] [monitor.sh] terminou com sucesso
+2026-11-17 23:06:02 [INFO] [monitor.sh] iniciando (usuário: root)
+2026-11-17 23:06:05 [INFO] [monitor.sh] terminou com sucesso
+2026-11-17 23:06:05 [INFO] [monitor.sh] iniciando (usuário: root)
+2026-11-17 23:22:11 [INFO] [01-parar-api.sh] iniciando (usuário: guilh)
+2026-11-17 23:22:11 [INFO] [01-parar-api.sh] 0/2 Verificações iniciais
+2026-11-17 23:22:11 [INFO] [01-parar-api.sh] estado inicial: API=active monitor=active health={"status":"ok","banco":"ok"}
+2026-11-17 23:22:11 [INFO] [01-parar-api.sh] A) Matando o processo da API com kill -9 (queda brusca)
+2026-11-17 23:22:11 [INFO] [01-parar-api.sh] PID da API antes: 6983
+2026-11-17 23:22:12 [INFO] [01-parar-api.sh] API fora do ar (processo morto)
+2026-11-17 23:22:15 [INFO] [01-parar-api.sh] RECUPEROU em ~4s pelo systemd (Restart=on-failure): PID 6983 -> 26373
+2026-11-17 23:22:15 [INFO] [01-parar-api.sh] log do systemd sobre a queda:
+2026-11-17 23:22:15 [INFO] [01-parar-api.sh]   Nov 17 23:22:14 zeladoria-srv systemd[1]: Started zeladoria-api.service - Zeladoria do Bairro - API de Ocorrencias (FastAPI).
+2026-11-17 23:22:15 [INFO] [01-parar-api.sh]   Nov 17 23:22:15 zeladoria-srv zeladoria-api[26373]: INFO:     Started server process [26373]
+2026-11-17 23:22:15 [INFO] [01-parar-api.sh]   Nov 17 23:22:15 zeladoria-srv zeladoria-api[26373]: INFO:     Waiting for application startup.
+2026-11-17 23:22:15 [INFO] [01-parar-api.sh]   Nov 17 23:22:15 zeladoria-srv zeladoria-api[26373]: INFO:     Application startup complete.
+2026-11-17 23:22:15 [INFO] [01-parar-api.sh]   Nov 17 23:22:15 zeladoria-srv zeladoria-api[26373]: INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2026-11-17 23:22:15 [INFO] [01-parar-api.sh]   Nov 17 23:22:15 zeladoria-srv zeladoria-api[26373]: INFO:     127.0.0.1:47480 - "GET /health HTTP/1.1" 200 OK
+2026-11-17 23:22:15 [INFO] [01-parar-api.sh] esperando o monitor confirmar que a API voltou ao normal...
+2026-11-17 23:22:16 [INFO] [01-parar-api.sh] B) Parando a API manualmente com systemctl stop
+2026-11-17 23:22:16 [INFO] [01-parar-api.sh] estado da API agora: inactive  (o systemd não religa sozinho depois de um stop)
+2026-11-17 23:22:16 [INFO] [01-parar-api.sh] esperando o monitor perceber e reiniciar (até 120s)...
+2026-11-17 23:22:40 [INFO] [01-parar-api.sh] RECUPEROU em 24s pelo monitor: health={"status":"ok","banco":"ok"}
+2026-11-17 23:22:40 [INFO] [01-parar-api.sh] o que o monitor registrou no monitor.log:
+2026-11-17 23:22:40 [INFO] [01-parar-api.sh]   2026-11-17 23:22:27 [ALERT] API sem resposta em http://127.0.0.1:8000/health (falha 1 de 2)
+2026-11-17 23:22:40 [INFO] [01-parar-api.sh]   2026-11-17 23:22:38 [ALERT] API sem resposta em http://127.0.0.1:8000/health (falha 2 de 2)
+2026-11-17 23:22:40 [INFO] [01-parar-api.sh]   2026-11-17 23:22:38 [ALERT] reiniciando zeladoria-api.service (estado antes: inactive)
+2026-11-17 23:22:40 [INFO] [01-parar-api.sh]   2026-11-17 23:22:39 [INFO] API recuperada em 1s após o reinício
+2026-11-17 23:22:40 [INFO] [01-parar-api.sh] ---- RESULTADO ----
+2026-11-17 23:22:40 [INFO] [01-parar-api.sh] A) kill -9 ........: recuperado pelo systemd
+2026-11-17 23:22:40 [INFO] [01-parar-api.sh] B) systemctl stop .: recuperado pelo monitor
+2026-11-17 23:22:40 [INFO] [01-parar-api.sh] estado final: API=active monitor=active
+2026-11-17 23:22:40 [INFO] [01-parar-api.sh] terminou com sucesso
+2026-11-17 23:24:19 [INFO] [02-carga.sh] iniciando (usuário: guilh)
+2026-11-17 23:24:19 [INFO] [02-carga.sh] 1/2 Carga de CPU: 20 núcleo(s) a 100% por 25s
+2026-11-17 23:24:19 [INFO] [02-carga.sh] carga ligada; esperando o serviço de monitoramento perceber...
+2026-11-17 23:24:35 [INFO] [02-carga.sh] linhas que o monitor gravou durante a carga:
+2026-11-17 23:24:35 [INFO] [02-carga.sh]   2026-11-17 23:24:30 [INFO] cpu=99% mem=8% disco=1% api=ok
+2026-11-17 23:24:35 [INFO] [02-carga.sh]   2026-11-17 23:24:30 [ALERT] CPU em 99% (limite 80%)
+2026-11-17 23:24:44 [INFO] [02-carga.sh] carga de CPU encerrada
+2026-11-17 23:24:44 [INFO] [02-carga.sh] RESULTADO CPU: alerta registrado
+2026-11-17 23:24:44 [INFO] [02-carga.sh] 2/2 Carga de memória
+2026-11-17 23:24:56 [INFO] [02-carga.sh] RAM total: 15917 MB | em uso agora: 7% | vou ocupar ~1910 MB | limite de demonstração: 12%
+2026-11-17 23:25:00 [INFO] [02-carga.sh] memória ocupada; rodando uma verificação do monitor com o limite reduzido:
+2026-11-17 23:25:00 [INFO] [monitor.sh] iniciando (usuário: guilh)
+2026-11-17 23:25:01 [INFO] [monitor.sh] terminou com sucesso
+2026-11-17 23:25:01 [INFO] [02-carga.sh]   2026-11-17 23:25:01 [INFO] cpu=0% mem=19% disco=1% api=ok
+2026-11-17 23:25:01 [INFO] [02-carga.sh]   2026-11-17 23:25:01 [ALERT] MEMORIA em 19% (limite 12%)
+2026-11-17 23:25:17 [INFO] [02-carga.sh] memória liberada: 7% em uso
+2026-11-17 23:25:17 [INFO] [02-carga.sh] ---- RESULTADO ----
+2026-11-17 23:25:17 [INFO] [02-carga.sh] CPU e memória sobrecarregadas; alertas gravados em /var/log/zeladoria/monitor.log
+2026-11-17 23:25:17 [INFO] [02-carga.sh] terminou com sucesso
+2026-11-17 23:26:22 [INFO] [03-erro-controlado.sh] iniciando (usuário: guilh)
+2026-11-17 23:26:22 [INFO] [03-erro-controlado.sh] passo 1: tudo certo (este passo funciona)
+2026-11-17 23:26:22 [INFO] [03-erro-controlado.sh] passo 2: vou ler um arquivo que não existe, de propósito...
+2026-11-17 23:26:22 [ERROR] [03-erro-controlado.sh] falhou na linha 16 (código 1): cat /var/lib/zeladoria/arquivo-que-nao-existe.txt
+2026-11-17 23:26:22 [ERROR] [03-erro-controlado.sh] terminou com erro (código 1)
+2026-11-17 23:28:28 [INFO] [monitor.sh] terminou com sucesso
+2026-11-17 23:28:33 [INFO] [monitor.sh] iniciando (usuário: root)
+2026-11-17 23:31:11 [INFO] [04-pos-reboot.sh] iniciando (usuário: guilh)
+2026-11-17 23:31:11 [INFO] [04-pos-reboot.sh] sistema ligado desde: 2026-11-17 23:28:30 (up 2 minutes)
+2026-11-17 23:31:11 [INFO] [04-pos-reboot.sh] zeladoria-api: active | início automático: enabled | subiu em: Tue 2026-11-17 23:28:33 -03
+2026-11-17 23:31:11 [INFO] [04-pos-reboot.sh] zeladoria-monitor: active | início automático: enabled | subiu em: Tue 2026-11-17 23:28:33 -03
+2026-11-17 23:31:11 [INFO] [04-pos-reboot.sh] API respondendo: {"status":"ok","banco":"ok"}
+2026-11-17 23:31:11 [INFO] [04-pos-reboot.sh] últimas linhas do monitor.log:
+2026-11-17 23:31:11 [INFO] [04-pos-reboot.sh]   2026-11-17 23:30:35 [INFO] cpu=0% mem=5% disco=1% api=ok
+2026-11-17 23:31:11 [INFO] [04-pos-reboot.sh]   2026-11-17 23:30:46 [INFO] cpu=0% mem=4% disco=1% api=ok
+2026-11-17 23:31:11 [INFO] [04-pos-reboot.sh]   2026-11-17 23:30:57 [INFO] cpu=0% mem=4% disco=1% api=ok
+2026-11-17 23:31:11 [INFO] [04-pos-reboot.sh]   2026-11-17 23:31:08 [INFO] cpu=0% mem=4% disco=1% api=ok
+2026-11-17 23:31:11 [INFO] [04-pos-reboot.sh] RESULTADO: serviços ativos após o reinício, sem intervenção manual
+2026-11-17 23:31:11 [INFO] [04-pos-reboot.sh] terminou com sucesso
+2026-11-17 23:32:18 [INFO] [04-pos-reboot.sh] iniciando (usuário: guilh)
+2026-11-17 23:32:18 [INFO] [04-pos-reboot.sh] sistema ligado desde: 2026-11-17 23:28:30 (up 3 minutes)
+2026-11-17 23:32:18 [INFO] [04-pos-reboot.sh] zeladoria-api: active | início automático: enabled | subiu em: Tue 2026-11-17 23:28:33 -03
+2026-11-17 23:32:18 [INFO] [04-pos-reboot.sh] zeladoria-monitor: active | início automático: enabled | subiu em: Tue 2026-11-17 23:28:33 -03
+2026-11-17 23:32:18 [INFO] [04-pos-reboot.sh] API respondendo: {"status":"ok","banco":"ok"}
+2026-11-17 23:32:18 [INFO] [04-pos-reboot.sh] últimas linhas do monitor.log:
+2026-11-17 23:32:18 [INFO] [04-pos-reboot.sh]   2026-11-17 23:31:41 [INFO] cpu=0% mem=4% disco=1% api=ok
+2026-11-17 23:32:18 [INFO] [04-pos-reboot.sh]   2026-11-17 23:31:52 [INFO] cpu=0% mem=4% disco=1% api=ok
+2026-11-17 23:32:18 [INFO] [04-pos-reboot.sh]   2026-11-17 23:32:03 [INFO] cpu=0% mem=4% disco=1% api=ok
+2026-11-17 23:32:18 [INFO] [04-pos-reboot.sh]   2026-11-17 23:32:14 [INFO] cpu=0% mem=4% disco=1% api=ok
+2026-11-17 23:32:18 [INFO] [04-pos-reboot.sh] RESULTADO: serviços ativos após o reinício, sem intervenção manual
+2026-11-17 23:32:18 [INFO] [04-pos-reboot.sh] terminou com sucesso
