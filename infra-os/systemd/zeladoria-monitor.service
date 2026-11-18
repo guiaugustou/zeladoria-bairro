@@ -1,0 +1,22 @@
+[Unit]
+Description=Zeladoria do Bairro - Monitoramento (CPU, memoria, disco e API)
+After=network.target zeladoria-api.service
+
+[Service]
+Type=simple
+# Roda como root porque precisa reiniciar a API quando ela para de responder.
+User=root
+# Limites e intervalo (opcional; o "-" evita erro se o arquivo não existir).
+EnvironmentFile=-/etc/zeladoria/monitor.env
+ExecStart=/opt/zeladoria/bin/monitor.sh
+# Se o monitor morrer por erro, o systemd liga de novo em 5 segundos.
+Restart=on-failure
+RestartSec=5
+# No "stop", manda SIGTERM só para o script, que encerra e registra no log.
+KillMode=mixed
+NoNewPrivileges=true
+SyslogIdentifier=zeladoria-monitor
+
+[Install]
+# Faz o monitor subir junto com o sistema.
+WantedBy=multi-user.target

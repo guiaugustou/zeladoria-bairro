@@ -1,0 +1,21 @@
+[Unit]
+Description=Zeladoria do Bairro - API de Ocorrencias (FastAPI)
+After=network.target
+
+[Service]
+Type=simple
+User=zeladoria
+Group=zeladoria
+WorkingDirectory=/opt/zeladoria/app
+# Variáveis de ambiente (DATABASE_URL) ficam fora do código e do GitHub.
+EnvironmentFile=/etc/zeladoria/zeladoria.env
+ExecStart=/opt/zeladoria/venv/bin/uvicorn app.main:app --host 0.0.0.0 --port 8000
+# Se a API cair, o systemd liga de novo em 3 segundos.
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+SyslogIdentifier=zeladoria-api
+
+[Install]
+# Faz a API subir junto com o sistema.
+WantedBy=multi-user.target
