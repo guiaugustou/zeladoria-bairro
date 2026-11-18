@@ -31,8 +31,8 @@ id -u "$USUARIO_SERVICO" > /dev/null 2>&1 || { erro "usuário '$USUARIO_SERVICO'
 
 # ---------------------------------------------------------------
 info "1/6 Dependências do sistema (python3, python3-venv, curl)"
-apt-get update -qq
-DEBIAN_FRONTEND=noninteractive apt-get install -y -qq python3 python3-venv curl > /dev/null
+apt-get -o DPkg::Lock::Timeout=300 update -qq
+DEBIAN_FRONTEND=noninteractive apt-get -o DPkg::Lock::Timeout=300 install -y -qq python3 python3-venv curl > /dev/null
 info "python: $(python3 --version)"
 
 # ---------------------------------------------------------------

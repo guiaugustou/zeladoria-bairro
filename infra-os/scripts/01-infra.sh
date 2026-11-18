@@ -38,8 +38,8 @@ PY
 
 # ---------------------------------------------------------------
 info "0/4 Ferramentas de rede (curl, iproute2, iputils-ping)"
-apt-get update -qq
-DEBIAN_FRONTEND=noninteractive apt-get install -y -qq curl iproute2 iputils-ping > /dev/null
+apt-get -o DPkg::Lock::Timeout=300 update -qq
+DEBIAN_FRONTEND=noninteractive apt-get -o DPkg::Lock::Timeout=300 install -y -qq curl iproute2 iputils-ping > /dev/null
 
 # ---------------------------------------------------------------
 info "1/4 Hostname"

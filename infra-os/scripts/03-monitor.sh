@@ -29,8 +29,8 @@ fi
 
 # ---------------------------------------------------------------
 info "1/4 Programas do monitor em $BIN_DIR"
-apt-get update -qq
-DEBIAN_FRONTEND=noninteractive apt-get install -y -qq curl logrotate > /dev/null
+apt-get -o DPkg::Lock::Timeout=300 update -qq
+DEBIAN_FRONTEND=noninteractive apt-get -o DPkg::Lock::Timeout=300 install -y -qq curl logrotate > /dev/null
 install -d -m 755 -o root -g root "$BIN_DIR"
 install -m 755 -o root -g root "$DIR_SCRIPT/monitor.sh" "$DIR_SCRIPT/lib.sh" "$BIN_DIR/"
 info "instalados: $(ls "$BIN_DIR" | tr '\n' ' ')"
