@@ -37,7 +37,6 @@ class OcorrenciaBase(CamelModel):
     bairro: str = Field(min_length=2, max_length=100)
     latitude: float = Field(ge=-90, le=90)
     longitude: float = Field(ge=-180, le=180)
-    # PASSO 11: tire o "#" da linha abaixo
     foto: Optional[str] = Field(default=None, max_length=300)
 
 
@@ -76,7 +75,6 @@ class OcorrenciaOut(CamelModel):
     bairro: str
     latitude: float
     longitude: float
-    # PASSO 11: tire o "#" da linha abaixo
     foto: Optional[str] = None
     status: Status
     usuario_id: Optional[int] = None

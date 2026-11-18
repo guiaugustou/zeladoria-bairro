@@ -30,7 +30,6 @@ class Ocorrencia(Base):
     atualizada_em: Mapped[datetime] = mapped_column(
         DateTime, server_default=func.now(), onupdate=func.now()
     )
-    # PASSO 11: tire o "#" da linha abaixo
     foto: Mapped[Optional[str]] = mapped_column(String(300), nullable=True)
 
     # Ligação com a tabela de bairros (cada ocorrência pertence a 1 bairro)
