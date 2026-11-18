@@ -17,6 +17,13 @@ Projeto da Global Solution CitizenTech 2026.2 (FIAP, Engenharia de Software).
 | ODS conectados | ODS 11 (cidades e comunidades sustentáveis): melhora o espaço público e a participação do morador. ODS 9 (indústria, inovação e infraestrutura): usa tecnologia para manter a infraestrutura urbana. |
 | Dados | Dados simulados; nenhum dado pessoal real. |
 
+## Integrantes
+
+Augusto Rocha Silva - RM556316
+Erik Yuuta Goto - RM558076
+Guilherme Vieira Augusto - RM557264
+Wendell dos Santos Silva - RM558859
+
 ## Visão geral
 
 Esta pasta entrega a parte de **Sistemas Operacionais (OS)** do projeto Zeladoria do Bairro. A API de ocorrências (pasta `api-soa`) é instalada, configurada e mantida no ar em um Linux por **scripts Bash reproduzíveis**, com serviços **systemd**, **monitoramento**, **logs de execução e auditoria** e **testes de falha**.
