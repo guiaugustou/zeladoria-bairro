@@ -19,10 +19,10 @@ Projeto da Global Solution CitizenTech 2026.2 (FIAP, Engenharia de Software).
 
 ## Integrantes
 
-Augusto Rocha Silva - RM556316
-Erik Yuuta Goto - RM558076
-Guilherme Vieira Augusto - RM557264
-Wendell dos Santos Silva - RM558859
+- Augusto Rocha Silva - RM556316
+- Erik Yuuta Goto - RM558076
+- Guilherme Vieira Augusto - RM557264
+- Wendell dos Santos Silva - RM558859
 
 ## Visão geral
 
@@ -30,7 +30,7 @@ Esta pasta entrega a parte de **Sistemas Operacionais (OS)** do projeto Zeladori
 
 Tudo foi executado em **WSL2 com Ubuntu 26.04 LTS** (Windows 11, systemd ativo). Os scripts também servem para uma VM Ubuntu/Debian com systemd.
 
-**Vídeo de demonstração (até 7 min):** LINK-DO-VIDEO
+**Vídeo de demonstração (até 7 min):** [LINK-DO-VIDEO](https://youtu.be/G2xPO4DJxl0)
 
 ## Estrutura
 
